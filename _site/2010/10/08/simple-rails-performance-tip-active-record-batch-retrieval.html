@@ -1,0 +1,14 @@
+<blockquote>
+<pre>Users.each do |user|</pre>
+<pre>  puts user.name</pre>
+<pre>end</pre>
+</blockquote>
+Ever wondered about how expensive a simple <strong>".each"</strong> on an ActiveRecord object collection is. This essentially means for every iteration of the loop, there is going to be a database fetch. Imagine looping over a collection that has 10,000 records (forget millions..). Yes, I have made use of this very same thing a bunch of times without realising the kind of performance implications this could have. Not until last week I discovered that there was a very less-expensive way to do this.
+
+I was perusing the <a href="http://guides.rubyonrails.org/" target="_blank">Rails guides</a> casually looking for something else when I hit upon this. <strong>".find_each"</strong>. What does this do? It makes looping over a collection of Active record objects much much cheaper by performing a batch retreival of the database records and caching them. The batch size can be altered by passing in a batch_size param like this <strong>".find_each(:batch_size =&gt; 500"</strong>).
+<blockquote>
+<pre>Users.find_each(:batch_size =&gt; 200) do |user|</pre>
+<pre>  puts user.name</pre>
+<pre>end</pre>
+</blockquote>
+I have almost stopped using <strong>".each"</strong> these days and let<strong> ".find_each"</strong> do the job.

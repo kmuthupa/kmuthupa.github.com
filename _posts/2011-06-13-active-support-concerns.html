@@ -1,0 +1,39 @@
+---
+layout: post
+title: Active Support Concerns
+tags:
+- Active Support
+- Agile
+- Code
+- Rails
+- Refactor
+- Web Application Development
+status: publish
+type: post
+published: true
+meta:
+  jabber_published: '1308014450'
+  _wpas_done_twitter: '1'
+---
+I recently came across this inherent feature Rails provides to modularize or break down huge ActiveRecord models into reusable chunks or concerns. This way, these concerns are now pluggable into several different models where there would be a need for them. Not sure how many folks out there are aware of this nice little thing. I did'nt for sure until couple of days ago.
+
+module Pluggable
+  extend ActiveSupport::Concern
+
+  included do
+    extend ClassMethods
+    include InstanceMethods
+  end
+
+  module ClassMethods
+     
+  end
+
+  module InstanceMethods
+     
+  end
+end
+
+class Plug 
+  include Pluggable
+end
