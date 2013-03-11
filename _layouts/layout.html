@@ -10,11 +10,12 @@
   <link href="/css/application.css" rel="stylesheet">
 </head>
 <body>
-  {% include navigation.html %}
-  {{ content }}           
-</div>
-{% include footer.html %}
-<script type="text/javascript">
-</script>
+  <div class="container">
+    {% include navigation.html %}
+    {{ content }}        
+    {% include footer.html %}
+  </div>   
+  <script type="text/javascript">
+  </script>
 </body>
 </html>

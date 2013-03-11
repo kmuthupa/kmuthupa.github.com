@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layout
 title: Simple Rails Performance Tip - Active Record Batch Retrieval
 tags:
 - ActiveRecord
@@ -19,6 +19,7 @@ meta:
   _wpas_done_twitter: '1'
   _wpas_skip_fb: '1'
 ---
+<div class='hero-unit'>
 <blockquote>
 <pre>Users.each do |user|</pre>
 <pre>  puts user.name</pre>
@@ -33,3 +34,4 @@ I was perusing the <a href="http://guides.rubyonrails.org/" target="_blank">Rail
 <pre>end</pre>
 </blockquote>
 I have almost stopped using <strong>".each"</strong> these days and let<strong> ".find_each"</strong> do the job.
+</div>

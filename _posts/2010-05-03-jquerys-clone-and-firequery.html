@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layout
 title: jQuery's Clone() and FireQuery
 tags:
 - Ajax
@@ -14,6 +14,7 @@ published: true
 meta:
   _edit_last: '13680702'
 ---
+<div class='hero-unit'>
 So there was this need for providing ajax-style add/remove item-rows on the last project I worked on.  What I thought might be pretty straight-forward to achieve using jQuery-fu eventually turned out to be little hairy for me.
 
 <img title="More..." src="http://www.pathf.com/blogs/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif" alt="" />The approach that I used to implement this was to use a hidden item(a div with some content in this case) and clone it using the <a href="http://api.jquery.com/clone/" target="_blank">jQuery clone()</a> method to make a new copy of the item and then append it to the collection under a parent div.  The cloning and adding worked like a charm. What bothered me was the remove of the item-row. Each item-row had a remove link/button to delete the item. The remove was supposed to work using the jQuery click event handler on the remove link/button. It did'nt work as expected :-(.  The click event handler was'nt getting hit for some reason and I did not have clue as to why as the same remove handler was working without issues in a different section on the same page.
@@ -25,3 +26,4 @@ FireQuery is a cool little add-on for Firefox that integrates with Firebug. It a
 I m a jQuery newbie but I have already started loving it over Prototype and other JS libraries I have used in the past. Hoping to make more use of it (and FireQuery too!) in the future.
 
 <img src="http://www.pathf.com/blogs/wp-content/uploads/2010/05/Screen-shot-2010-05-03-at-11.49.29-AM.png" alt="JQuery Clone and Append" width="485" height="179" />
+</div>
