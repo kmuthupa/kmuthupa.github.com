@@ -11,34 +11,35 @@
 </head>
 <body>
   <div class="container">
-    <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
+    <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="/index.html">Karthik Muthupalaniappan</a>
-      <div class="nav-collapse">
-        <ul class="nav">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/index.html">Karthik Muthupalaniappan</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
           <li><a href="https://twitter.com/#!/karthik_s" target='_new'>@Karthik_s</a></li>
-          <li><a href="mailto:karthik.swaminathan@me.com" target='_new'>Email</a></li>
+          <li><a href="mailto:karthik.swaminathan@gmail.com" target='_new'>Email</a></li>
           <li><a href="http://in.linkedin.com/in/karthikliveshere" target='_new'>Linkedin</a></li>
           <li><a href="https://github.com/kmuthupa" target='_new'>GitHub</a></li>
           <li><a href="/blog.html">Blog</a></li>
-          <li><a href="https://dl.dropbox.com/u/404093/Karthik-Resume.pdf" target='_new'>Resume</a></li>
         </ul>
       </div>
     </div>
-  </div>
 </div>
+
     <div class='hero-unit'>
 <div class="separator" style="clear:both;text-align:center;"><a href="http://intellisenze.files.wordpress.com/2009/12/images.jpg" style="clear:right;float:right;margin-bottom:1em;margin-left:1em;"><img border="0" src="http://intellisenze.files.wordpress.com/2009/12/images.jpg?w=97" /></a><br /></div><br />So we just went through this humongous (believe me!) effort ofupgrading the technical platform for one of our existing Railsapplications that was running Rails 2.1, Ruby 1.7 and Mongrel cluster.The goal was to upgrade to Rails 2.3, Enterprise Ruby 1.8.6 andPassenger. It all started out as well as you would think. Updating theRails gem, Ruby version, installing/configuring <a href="http://www.modrails.com/" target="_blank">Passenger</a>and updating relevant gems was pretty quick and smooth. Some quick anddirty testing of the application did not reveal any major problems orissues. Great! You are thinking the upgrade is mostly done att thispoint before you move on to the tests in the application!<br /><br /><b>Tests</b><br />Tests can prove to be major hurdle in upgrading Rails applications.&nbsp;In our specific case,&nbsp; close to 70% of the tests were either broken orfailing due to a number of reasons.&nbsp; Actually, the number of brokentests was way way greater than failing tests which led us to think thechanges in the Rails testing API caused most of these issues.&nbsp; Some ofthe issues were also caused by a plugin or gem that was used to supportthe tests not being compatible with the new API. It took us quite a bitof effort to figure out the reasons for the issues and also find thefixes.<br /><br /><b>Plugins</b><br />I think this is other major pain point. If your application uses abunch of plugins to support what it does, then be wary of theroadblocks they can pose when it is time to upgrade Rails or Ruby inyour application.&nbsp; The problem mostly arises because of the fact thatthe community or the user group that built the plugin dont continue tosupport it or doesnt bother to make it compatible with newer versionsof Ruby or Rails. In situations like these, you get thrown into a stateof dilemma thinking about whether to write a new plugin to replace theexisting one or fix the existing one both of which could betime-consuming.&nbsp; It makes sense to spend time finding about whatexactly is the need for the plugin in the application and if it isindispensable etc before making a wise decision.<br /><br /><b>Deploying the upgraded application</b><br />Though this may not be as hairy as the first two, it could be stillprove to be a challenge especially when your the application server ischanging (Mongrel -&gt; Passenger).&nbsp; I think it is important to ensurethe script is modified appropriately and is tested adequately in yourstaging environment before you deploy the upgraded application to thereal-world.<br /><br /><b>Session handling issue with Rails 2.3 </b><br />For the benefit of Rails community out there, I d like to brieflyrecount one of the problems that caused me a quite a bit of headacheduring the upgrade.&nbsp; The application in question is a contentmanagement website with multiple subdomains. The issue that I saw afterthe upgrade was after user logged into the one of the subdomains in thesite and navigated away to a different subdomain, the user got loggedout. When the user returned to the subdomain where he logged inoriginally, he was logged in again.&nbsp; After several hours of efforttrying to debug the issue (at one point,&nbsp; I was even thinking aboutstripping out Restful authentication and plugging in Authlogic), this <a href="http://stackoverflow.com/questions/941939/share-rails-sessions-among-applications" target="_blank">post</a> saved the day for me.&nbsp; It boiled down to setting this in the .rb file for the different environments :<br />config.action_controller.session = {<br />:domain =&gt; ""<br />}<br />This allowed the session information to be persisted across multiple subdomains of the site.<br /><br /><b>Some Advice</b><br /><ul><li>Generally, the amount of effort to upgrade is going to be directlyproportional to the time between the upgrades. So, upgrade yourapplication often!</li><li>When choosing plugins or gems to support your application, consider the upgradability of these before you decide to use them!</li><li>Last but not the least, spend atleast 25% of the time necessary forthe upgrade itself to estimate how long it might take to get it done ;-)</li></ul>
 </div>        
       <footer>
-    <p>&copy; Karthik Muthupalaniappan 2013</p>
+    <p>&copy; Karthik Muthupalaniappan 2015</p>
   </footer>
+
   </div>   
   <script type="text/javascript">
   </script>
