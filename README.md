@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+<h1 align="center">Hi 👋, I'm Karthik Muthupalaniappan</h1>
+<h3 align="center">Engineering Leader and Software Craftsman</h3>
 
-You can use the [editor on GitHub](https://github.com/kmuthupa/kmuthupa.github.com/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+- 🌱 I’m currently learning **Leadership mantras, Meditation, Aurelia**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- 💬 Ask me about **Software Craftsmanship, Mentoring, Software Engineering**
 
-### Markdown
+- 📫 How to reach me **karthik@karthikmuthu.com**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- ⚡ Fun fact **Love Music**
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kmuthupa/kmuthupa.github.com/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<p align="center">
+<a href="https://twitter.com/karthik_s" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="karthik_s" height="30" width="30" /></a>
+<a href="https://linkedin.com/in/karthikliveshere" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="karthikliveshere" height="30" width="30" /></a>
+</p>
